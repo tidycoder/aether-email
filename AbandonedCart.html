@@ -1,0 +1,216 @@
+<table style="background-color:white;margin:0 auto;min-width=600px;max-width:700px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+    <tbody>
+    <tr>
+        <td>
+            <table style="border-collapse:collapse;padding-bottom:20px;padding-top:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
+                <tbody>
+                <tr style="border-bottom:solid 1px #979797;height: 50px;">
+                    <td align="left" width="50%">
+                        <span style="font-size:24px;">Aether</span>
+                    </td>
+                    <td align="right" width="50%">
+                        <span style="font-family: Helvetica;color:black;font-size:14px;white-space: nowrap;">ABANDONED CART</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="margin-top: 70px;" align="left" width="100%">
+                        <span style="font-family: Helvetica;color:black;display:block;margin-top:70px;font-size:28px;">Forgot something?</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" width="100%">
+                        <p style="font-family: Helvetica;color:black;font-size:16px;line-height:24px;margin-top:30px;margin-bottom:50px;display:block;">Thank you for coming to see us at Aether. We noticed you have unchecked out items in your shopping cart. In case you’re still thinking about your purchase we have attached the link below for your convenience. </p>
+<p style="font-family: Helvetica;color:black;font-size:16px;line-height:24px;margin-top:30px;margin-bottom:50px;display:block;">If there’s anything you’d like to ask about our products and services feel free to reach us at this email and we will get back to you as fast as possible .</p>
+                        {% if custom_message != blank %}
+                        <p>{{ custom_message }}</p>
+                        {% else %}
+
+
+
+                        <p>{{ email_body }}</p>
+                        {% endif %}
+                        <a style="text-decoration:none;" href="https://aether-eyewear.com/cart" target="_blank" rel="noopener noreferrer"> 
+                            <span style="display: inline-block;color:white;font-weight:bold;font-size:14px;line-height:70px;width:300px;background-color:black;text-align:center;vertical-align:middle;font-family: Helvetica;margin-bottom:50px;">CHECK OUT NOW
+                            </span> 
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color:#f0f0f0;">
+            <table style="border-collapse:collapse;max-width:600px;margin-top:77px;padding:20px 0;" width="100%" cellspacing="0" cellpadding="0" align="center">
+                <tbody>
+                <tr>
+                    <td align="left">
+                        <span style="font-family: Helvetica;font-size:14px;font-weight:bold;line-height:19px;padding-bottom:20px;text-align:left;float:left;">
+                            ORDER SUMMARY
+                        </span>
+                        <span style="font-family: Helvetica;font-size:12px;min-width:200px;line-height:19px;padding-bottom:20px;text-align:right;float:right;">
+                            {{created_at | date: "%d %b %Y"}}
+                        </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <!-- @repeat items -->
+    <tr>
+        <td style="background-color:#f0f0f0;">
+            <table style="border-collapse:collapse;margin:0 auto;border-bottom:1px solid #f0f0f0;max-width:600px;margin-top:30px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+            <tbody>
+  {% for line in line_items %}
+
+                <tr>
+                    <td style="width:100px;margin-bottom:30px;height:60px;display:inline-block;"><img src={{ line | img_url: 'compact_cropped' }} width="60" height="60" data-imagetype="External"/> </td>
+                    <td>
+                        <table style="max-width:500px;margin-bottom:30px;border-collapse:collapse;">
+                        <tbody>
+                            <tr style="vertical-align:top;height:30px">
+                                <td width="100px">Frame</td>
+                                <td width="100px">Type</td>
+                                <td width="100px">Colour</td>
+                                <td width="100px">Quantity</td>
+                                <td width="100px">Total</td>
+                            </tr>
+
+                            <tr style="height:30px">
+                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> {{line.title}}</td>
+                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> {{line.properties["type"]}}</td>
+                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">{{line.properties["color"]}}</td>
+                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">x {{line.quantity}}</td>
+                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">{{line.line_price}}</td>
+                            </tr>
+
+                        </tbody>
+                        </table>
+                    </td>
+                </tr>
+{% endfor %}
+
+            </tbody>
+            </table>
+        </td>
+    </tr>
+    <!-- @end-repeat items -->
+
+    <!-- items totals -->
+    <tr>
+        <td style="background-color:#f0f0f0;">
+            <table style="max-width:600px;border-collapse:collapse;margin:0 auto;margin-bottom:20px;border-top:1px solid #979797;" cellspacing="0" cellpadding="0" align="center">
+                <tbody>
+                    <tr style="height: 72px">
+                        <td align="left" width="400"></td>
+                        <td align="left" width="100"><span style="font-size:14px;line-height:22px;">Total</span></td>
+                        <td align="left" width="100"><span style="font-size:14px;line-height:22px;padding:0 0 10px;">{{total_price | money_with_currency}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <!-- end items totals -->
+    <tr>
+        <td>
+            <table style="border-collapse:collapse;max-width:700px;margin:0 auto;height:440px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+                <tbody>
+                <tr>
+                    <td style="background-color:black;vertical-align:top;" width="50%">
+                        <table style="border-collapse:collapse;margin:0 auto;" cellspacing="0" cellpadding="0" align="center">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-family: Helvetica;font-size:28px;margin-top:73px;margin-bottom:67px;display:block;color:white;text-align:center">Using Aether</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-family: Helvetica;font-size: 16px;line-height:24px;color: #FFFFFF;width:240px;height:106px;display:block;margin: 0 auto;margin-bottom:38px;">Download the quick start guide here. Here could be one more sentence, it feels a bit empty at the moment.
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;border: solid 1px white;margin-top:38px;">
+                                    <a style="text-decoration:none;" href="[*order_url*]" target="_blank" rel="noopener noreferrer"> 
+                                        <span style="color:white;font-weight:bold;font-size:14px;line-height:70px;background-color:black;text-align:center;vertical-align:middle;font-family: Helvetica;">DOWNLOAD GUIDE
+                                        </span> 
+                                    </a>
+                                </td>
+                            </tr>                            
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="50%">
+                        <img style="width:100%; display: block; height:440px;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/aether-glasses_R1_brown_female_02_LR.jpg?v=1605777891" /> 
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table style="max-width:600px;margin:0 auto;border-bottom:solid 1px #979797;" width="100%" align="center">
+                <tbody>
+                <tr>
+                    <td>
+                        <table style="margin-top:96px;margin-bottom:85px;width:100%;">
+                            <tbody>
+                            <tr>
+                                <td align="left" width="50%">
+                                    <span style="ont-family: Helvetica;font-size: 18px;color: #000000;letter-spacing: 0;">Create your own ambiance</span>
+                                </td>
+                                <td align="right" width="50%">
+                                    <img src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/aether_favicon_512x512_8f946066-5548-4031-b548-51718c14620a_32x32.png?v=1594676334"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <table style="max-width:600px;margin:0 auto;margin-top:30px; margin-bottom:76px;" width="100%" align="center">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <a style="font-family: Helvetica;font-size: 14px;line-height:14px;color: #000000;letter-spacing: 0;display:inline-block;padding-right: 12px;vertical-align: middle;" href="https://aether-eyewear.com" target="_blank" >aether-eyewear.com</a> <span style="height:12px;display:inline-block;border-left: solid 1px black;vertical-align:middle;"></span>
+                            </td>
+                            <td >
+                                <a style="font-family: Helvetica;font-size: 14px;line-height:14px; height:14px;color: #000000;letter-spacing: 0.21px;padding-right: 12px;vertical-align: middle;" href="https://www.instagram.com/aether_eyewear" target="_blank">@aether_eyewear</a><span style="height:12px;display:inline-block;border-left: solid 1px black;vertical-align: middle;"></span>
+                            </td>
+                            <td >
+                                <a style="font-family: Helvetica;font-size: 14px;color: #000000;letter-spacing: 0.21px;padding-right: 12px;vertical-align: middle;" href="https://aether-eyewear.com/pages/contact" target="_blank">Contact Us</a><span style="height:12px;display:inline-block;border-left: solid 1px black;vertical-align: middle;"></span>
+                            </td>
+                            <td >
+                                <a style="font-family: Helvetica;font-size: 14px;color: #000000;letter-spacing: 0.21px;vertical-align: middle;" href="https://aether-eyewear.com/pages/privacy-policy" target="_blank">Privacy Policy</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </tr>
+                <tr>
+                    <table style="padding-bottom:20px;padding-top:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <span style="color: #979797;font-size:12px;opacity:0.4;">@2020 Aether Eyewear</span>
+                            </td>
+                            <td align="right">
+                                <span style="color: #C7C7C7;font-size:12px;white-space:nowrap;opacity:0.4;">#14-04, 160 Robinson Road, Singapore 068914</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </tr>
+
+                </tbody>
+            <table>
+        </td>
+    </tr>
+
+
+    </tbody>
+</table>
