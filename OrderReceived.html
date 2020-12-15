@@ -1,56 +1,217 @@
-<table style="[*page_background_color*]margin:0 auto;max-width:700px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+
+
+
+<style>
+    img.prototype-logo {
+        display: inline-block;
+        width: 121px;
+        height: 29px;
+    }
+    span.page-head-title {
+        font-family: GTAmerica-ExtendedMedium;
+        color:black;
+        font-size:14px;
+        white-space: nowrap;
+    }
+
+    
+    .page-sub-title {
+        font-family: GTAmerica-ExtendedRegular;
+        color:black;
+        display:block;
+        margin-top:70px;
+        font-size:28px;
+    }
+
+    .page-desc {
+        font-family: SctoGroteskA-Regular;
+        color:black;
+        font-size:16px;
+        line-height:24px;
+        margin-top:30px;
+        margin-bottom:50px;
+        display:block;
+        max-width: 430px;
+    }
+
+    span.order-id {
+        font-family: GTAmerica-ExtendedMedium;
+        font-size:14px;
+        font-weight:bold;
+        line-height:19px;
+        padding-bottom:20px;
+        text-align:left;
+        float:left;
+        color: black;
+    }
+
+    span.order-date {
+        font-family: Helvetica;
+        font-size:12px;
+        color: black;
+        font-weight:bold;
+        min-width:200px;
+        line-height:19px;
+        padding-bottom:20px;
+        text-align:right;
+        float:right;
+    }
+
+    table.shipping-and-billing {
+        width:100%;
+        border-top: 1px solid #979797;
+        border-bottom: 1px solid #979797;
+        padding-top:50px;
+    }
+
+    table.shipping {
+        width:180px;
+        padding-bottom:30px;
+        font-family: SctoGroteskA-Regular;
+        font-size:12px;
+        color: black;
+        line-height: 21px;
+    }
+    table.billing {
+        width:180px;
+        padding-bottom:30px;
+        font-family: SctoGroteskA-Regular;
+        font-size:12px;
+        color: black;
+        line-height: 21px;
+    }
+
+    table.shipping span.prop-name {
+        font-family: SctoGroteskA-Medium;
+        font-size:12px;
+        color:black;
+        font-weight:bold;
+    }
+
+    table.billing span.prop-name {
+        font-family: SctoGroteskA-Medium;
+        font-size:12px;
+        color:black;
+        font-weight:bold;
+    }
+
+    .order-item-prop {
+        font-family:SctoGroteskA-Regular;
+    }
+
+    .order-item-value {
+        font-family: SctoGroteskA-Medium;
+        font-size: 11px;
+        color: #000000;
+        letter-spacing: 0;
+        font-weight:bold;
+    }
+
+
+    .item-total-prop {
+        font-family: SctoGroteskA-Regular;
+        font-size:14px;
+        line-height:22px;
+        padding:10px 0 0;
+        color:#000000;
+    }
+
+    .item-total-value {
+        font-family: SctoGroteskA-Medium;
+        font-size:14px;
+        line-height:22px;
+    }
+
+    .using-aether-title {
+        font-family: GTAmerica-ExtendedRegular;
+        font-size: 28px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        margin-top:73px;
+        margin-bottom:67px;
+        display:block;
+        text-align:center
+    }
+
+    .using-aether-desc {
+        font-family: SctoGroteskA-Regular;
+        font-size: 16px;
+        line-height:24px;
+        color: #FFFFFF;
+        width:240px;
+        height:106px;
+        display:block;
+        margin: 0 auto;
+        margin-bottom:38px;
+    }
+
+    .download-guide-button {
+        font-family: GTAmerica-ExtendedMedium;
+        font-weight:bold;
+        font-size:14px;
+        line-height:70px;
+        text-align:center;
+        vertical-align:middle;
+        color: white;
+    }
+
+</style>
+
+    <table style="[*page_background_color*]margin:0 auto;max-width:700px;" width="100%" cellspacing="0" cellpadding="0" align="center">
     <tbody>
     <tr>
         <td>
-            <table style="border-collapse:collapse;padding-bottom:20px;padding-top:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
+            <table style="border-collapse:collapse;padding-bottom:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
                 <tbody>
-                <tr style="border-bottom:solid 1px #979797;height: 50px;">
+                <tr style="border-bottom:solid 1px #979797;height: 100px;">
                     <td align="left" width="50%">
-                        <span style="[*body_font*][*description_color*]font-size:24px;">Aether</span>
+                        <img class="prototype-logo" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Logotype.png?v=1608042370" />
                     </td>
                     <td align="right" width="50%">
-                        <span style="font-family: Helvetica;color:black;font-size:14px;white-space: nowrap;">ORDER RECEIVED</span>
+                        <span class="page-head-title">ORDER RECEIVED</span>
                     </td>
                 </tr>
                 <tr>
                     <td style="margin-top: 70px;" align="left" width="100%">
-                        <span style="font-family: Helvetica;color:black;display:block;margin-top:70px;font-size:28px;">Thank you for your order, [*first_name*]</span>
+                        <span class="page-sub-title">Thank you for your order, [*first_name*]</span>
                     </td>
                 </tr>
                 <tr>
                     <td align="left" width="100%">
-                        <span style="font-family: Helvetica;color:black;font-size:16px;line-height:24px;margin-top:30px;margin-bottom:50px;display:block;">Your order has been successfully placed.  We will provide you with a tracking number once your product has been shipped.</span>
+                        <span class="page-desc">Your order has been successfully placed.  We will provide you with a tracking number once your product has been shipped.</span>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </td>
     </tr>
+
+
     <tr>
         <td style="background-color:#f0f0f0;">
             <table style="border-collapse:collapse;max-width:600px;margin-top:77px;padding:20px 0;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                 <tr>
                     <td align="left">
-                        <span style="font-family: Helvetica;font-size:14px;[*title_color*]font-weight:bold;line-height:19px;padding-bottom:20px;text-align:left;float:left;">
+                        <span class="order-id">
                             YOUR ORDER [*order_external*]
                         </span>
-                        <span style="font-family: Helvetica;font-size:12px;[*title_color*]font-weight:bold;min-width:200px;line-height:19px;padding-bottom:20px;text-align:right;float:right;">
+                        <span  class="order-date">
                             [*orderdate*]
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td style="width:100%;">
-                        <table style="width:100%;border-top: 1px solid #979797;border-bottom: 1px solid #979797;padding-top:50px;">
+                        <table class="shipping-and-billing">
                         <tbody>
                             <tr>
                                 <td>
-                                    <table style="width:180px;padding-bottom:30px">
+                                    <table class="shipping">
                                     <tbody>
                                         <tr>
                                             <td style="padding-bottom:21px">
-                                            <span style="font-family: Helvetica;font-size:12px;color:black;font-weight:bold;">Shipping Details</span>
+                                            <span class="prop-name">Shipping Details</span>
                                             </td>
                                         </tr>
                                         <tr style="height:24px">
@@ -72,11 +233,11 @@
                                     </table>
                                 </td>
                                 <td>
-                                    <table style="width:180px;padding-bottom:30px">
+                                    <table class="billing">
                                     <tbody>
                                         <tr>
                                             <td style="padding-bottom:21px">
-                                            <span style="font-family: Helvetica;font-size:12px;color:black;font-weight:bold;">Billing Details</span>
+                                            <span class="prop-name">Billing Details</span>
                                             </td>
                                         </tr>
                                         <tr style="height:24px">
@@ -98,11 +259,11 @@
                                     </table>
                                 </td>
                                 <td>
-                                    <table style="width:180px;padding-bottom:30px">
+                                    <table class="shipping">
                                     <tbody>
                                         <tr>
                                             <td style="padding-bottom:21px">
-                                               <span style="font-family: Helvetica;font-size:12px;color:black;font-weight:bold;"> Payment Method</span>
+                                               <span class="prop-name"> Payment Method</span>
                                             </td>
                                         </tr>
                                         <tr style="height:24px">
@@ -143,18 +304,18 @@
                         <table style="max-width:500px;border-collapse:collapse;">
                         <tbody>
                             <tr style="vertical-align:top;height:30px">
-                                <td width="100px">Frame</td>
-                                <td width="100px">Type</td>
-                                <td width="100px">Colour</td>
-                                <td width="100px">Quantity</td>
-                                <td width="100px">Total</td>
+                                <td width="100px" class="order-item-prop">Frame</td>
+                                <td width="100px" class="order-item-prop">Type</td>
+                                <td width="100px" class="order-item-prop">Colour</td>
+                                <td width="100px" class="order-item-prop">Quantity</td>
+                                <td width="100px" class="order-item-prop">Total</td>
                             </tr>
                             <tr style="height:30px">
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> [*product_name*]</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> [*product_sku*]</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">[*item_options*]</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">x [*item_quantity*]</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">[*item_cost*][*item_coupon*]</td>
+                                <td width="100px" class="order-item-value"> [*product_name*]</td>
+                                <td width="100px" class="order-item-value"> [*product_sku*]</td>
+                                <td width="100px" class="order-item-value">[*item_options*]</td>
+                                <td width="100px" class="order-item-value">x [*item_quantity*]</td>
+                                <td width="100px" class="order-item-value">[*item_cost*][*item_coupon*]</td>
                             </tr>
                         </tbody>
                         </table>
@@ -176,28 +337,28 @@
                         <td align="left" width="400">
                         <!-- Invoice Falcon Email Code START --><table class='container' style='margin-bottom:25px'><tr><td><h4><a href=' '>Download Invoice</a ></h4></td></tr></table><!-- Invoice Falcon Email Code END -->
                         </td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;padding:10px 0 0;">Subtotal</span></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;">$[*subtotal*]</span></td>
+                        <td align="left" width="100"><span class="item-total-prop">Subtotal</span></td>
+                        <td align="left" width="100"><span class="item-total-value">$[*subtotal*]</span></td>
                     </tr>
                     <tr>
                         <td align="left" width="400"></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;">Discount</span></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;">-$[*total_discount*]</span></td>
+                        <td align="left" width="100"><span class="item-total-prop">Discount</span></td>
+                        <td align="left" width="100"><span class="item-total-value">$[*total_discount*]</span></td>
                     </tr>
                     <tr>
                         <td align="left" width="400"></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;">Tax</span></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;">$[*total_tax*]</span></td>
+                        <td align="left" width="100"><span class="item-total-prop">Tax</span></td>
+                        <td align="left" width="100"><span class="item-total-value">$[*total_tax*]</span></td>
                     </tr>
                     <tr>
                         <td align="left" width="400"></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;">Shipping</span></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;padding:0 0 10px;">$[*total_shipping*]</span></td>
+                        <td align="left" width="100"><span class="item-total-prop">Shipping</span></td>
+                        <td align="left" width="100"><span class="item-total-value">$[*total_shipping*]</span></td>
                     </tr>
                     <tr>
                         <td align="left" width="400"></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;">Total</span></td>
-                        <td align="left" width="100"><span style="[*body_font*]font-size:14px;[*description_color*]line-height:22px;padding:0 0 10px;">$[*grand_total*]</span></td>
+                        <td align="left" width="100"><span class="item-total-prop" style="font-family: SctoGroteskA-Medium;">Total</span></td>
+                        <td align="left" width="100"><span class="item-total-value">$[*grand_total*]</span></td>
                     </tr>
                     <tr style="height:50px"></tr>
                 </tbody>
@@ -215,12 +376,12 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <span style="font-family: Helvetica;font-size:28px;margin-top:73px;margin-bottom:67px;display:block;color:white;text-align:center">Using Aether</span>
+                                    <span class="using-aether-title ">Using Aether</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <span style="font-family: Helvetica;font-size: 16px;line-height:24px;color: #FFFFFF;width:240px;height:106px;display:block;margin: 0 auto;margin-bottom:38px;">Download the quick start guide here. Here could be one more sentence, it feels a bit empty at the moment.
+                                    <span class="using-aether-desc">Download the quick start guide here. Here could be one more sentence, it feels a bit empty at the moment.
                                 </td>
                             </tr>
                             <tr>
@@ -228,7 +389,7 @@
                             <tr>
                                 <td style="[*button_background_color*]text-align:center;border: solid 1px white;margin-top:38px;">
                                     <a style="text-decoration:none;" href="[*order_url*]" target="_blank" rel="noopener noreferrer"> 
-                                        <span style="[*primary_font*][*button_text_color*]font-weight:bold;font-size:14px;line-height:70px;[*button_background_color*]text-align:center;vertical-align:middle;font-family: Helvetica;">DOWNLOAD GUIDE
+                                        <span class="download-guide-button" style="[*button_text_color*]">DOWNLOAD GUIDE
                                         </span> 
                                     </a>
                                 </td>
@@ -237,14 +398,12 @@
                         </table>
                     </td>
                     <td width="50%">
-                        <img style="width:100%; display: block; height: auto;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/aether-glasses_R1_brown_female_02_LR.jpg?v=1605777891" /> 
+                        <img style="width:100%; display: block; height: auto;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/mail-modal.png?v=1608048521" /> 
                     </td>
                 </tr>
                 </tbody>
             </table>
         </td>
     </tr>
-
-
     </tbody>
 </table>
