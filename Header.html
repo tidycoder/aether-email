@@ -1,10 +1,100 @@
-<!-- Web Font / @font-face : BEGIN --> <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. --> <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. --> <!-- [if mso]>
 <style>
+
+</style>
+<!-- Web Font / @font-face : BEGIN --> <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. --> <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. --> 
+<style>
+    @font-face {
+        font-family: "SctoGroteskA";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Bold.otf?v=1608028742") format("OTF");
+        font-weight: bold;
+    }
+    @font-face {
+        font-family: "SctoGroteskA";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Bold_Italic.otf?v=1608028742") format("OTF");
+        font-weight: bold;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "SctoGroteskA-Thin";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Light_Italic.otf?v=1608028742") format("OTF");
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "SctoGroteskA-Light";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Light.otf?v=1608028742") format("OTF")
+    }
+    @font-face {
+        font-family: "SctoGroteskA-Medium";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Medium.otf?v=1608028742") format("OTF"),
+    }
+    @font-face {
+        font-family: "SctoGroteskA-Thin";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Medium_Italic.otf?v=1608028742") format("OTF");
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "SctoGroteskA-Regular";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Regular_Italic.otf?v=1608028742") format("OTF");
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "SctoGroteskA-Regular";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Regular.otf?v=1608028742") format("OTF"),
+    }
+
+    @font-face {
+        font-family: "SctoGroteskA-Thin";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Thin.otf?v=1608028742") format("OTF"),
+    }
+
+    @font-face {
+        font-family: "SctoGroteskA-Thin";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Scto_Grotesk_A_Thin_Italic.otf?v=1608028742") format("OTF");
+        font-style: italic;
+    }
+
+
+
+
+    @font-face {
+        font-family: "GTAmerica-ExtendedLight";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/GT-America-Extended-Light.OTF?v=1608028673") format("OTF"),
+    }
+
+
+    @font-face {
+        font-family: "GTAmerica-ExtendedLight";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/GT-America-Extended-Light-Italic.OTF?v=1608028673") format("OTF");
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: "GTAmerica-ExtendedMedium";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/GT-America-Extended-Medium.OTF?v=1608028673") format("OTF"),
+    }
+
+    @font-face {
+        font-family: "GTAmerica-ExtendedMedium";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/GT-America-Extended-Medium-Italic.OTF?v=1608028673") format("OTF");
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: "GTAmerica-ExtendedRegular";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/GT-America-Extended-Regular.OTF?v=1608028673") format("OTF");
+    }    
+    @font-face {
+        font-family: "GTAmerica-ExtendedRegular";
+        src: url("https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/GT-America-Extended-Regular-Italic.OTF?v=1608028673") format("OTF");
+        font-style: italic;
+    }
+
+
     * {
         font-family: sans-serif !important;
     }
 </style>
-<![endif]--> <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ --> <!-- [if !mso]><!--> <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> --> <!--<![endif]--> <!-- Web Font / @font-face : END --> <!-- CSS Reset --><!-- What it does: Makes background images in 72ppi Outlook render at correct size. --> <!-- [if gte mso 9]>
+ <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ --> <!-- [if !mso]><!--> <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> --> <!--<![endif]--> <!-- Web Font / @font-face : END --> <!-- CSS Reset --><!-- What it does: Makes background images in 72ppi Outlook render at correct size. --> <!-- [if gte mso 9]>
 <xml>
     <o:OfficeDocumentSettings>
         <o:AllowPNG/>
