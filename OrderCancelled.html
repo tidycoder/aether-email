@@ -1,6 +1,177 @@
 
+<html>
+<head>
+<style>
+    img.prototype-logo {
+        display: inline-block;
+        width: 121px;
+        height: 29px;
+    }
+    span.page-head-title {
+        font-family: GTAmerica-ExtendedMedium;
+        color:black;
+        font-size:14px;
+        white-space: nowrap;
+    }
 
-    <table style="[*page_background_color*]margin:0 auto;max-width:700px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+
+    .page-sub-title {
+        font-family: GTAmerica-ExtendedRegular;
+        color:black;
+        display:block;
+        margin-top:70px;
+        font-size:28px;
+    }
+
+    .page-desc {
+        font-family: SctoGroteskA-Regular;
+        color:black;
+        font-size:16px;
+        line-height:24px;
+        margin-top:30px;
+        margin-bottom:35px;
+        display:block;
+        max-width: 430px;
+    }
+
+    span.order-id {
+        font-family: GTAmerica-ExtendedMedium;
+        font-size:14px;
+        font-weight:bold;
+        line-height:19px;
+        padding-bottom:30px;
+        text-align:left;
+        float:left;
+        color: black;
+    }
+
+    span.order-date {
+        font-family: SctoGroteskA-Medium;
+        font-size:12px;
+        color: black;
+        font-weight:bold;
+        min-width:200px;
+        line-height:19px;
+        padding-bottom:30px;
+        text-align:right;
+        float:right;
+    }
+
+    table.shipping-and-billing {
+        width:100%;
+        border-top: 1px solid #979797;
+        border-bottom: 1px solid #979797;
+        padding-top:50px;
+    }
+
+    table.shipping {
+        width:180px;
+        padding-bottom:30px;
+        font-family: SctoGroteskA-Regular;
+        font-size:12px;
+        color: black;
+        line-height: 21px;
+    }
+    table.billing {
+        width:180px;
+        padding-bottom:30px;
+        font-family: SctoGroteskA-Regular;
+        font-size:12px;
+        color: black;
+        line-height: 21px;
+    }
+
+    table.shipping .prop-value{
+      opacity: 0.6;
+    }
+
+    table.billing .prop-value{
+      opacity: 0.6;
+    }
+
+    table.shipping span.prop-name {
+        font-family: SctoGroteskA-Medium;
+        font-size:12px;
+        color:black;
+        font-weight:bold;
+        opacity: 1;
+    }
+
+    table.billing span.prop-name {
+        font-family: SctoGroteskA-Medium;
+        font-size:12px;
+        color:black;
+        font-weight:bold;
+        opacity: 1;
+    }
+
+    .order-item-prop {
+        font-family:SctoGroteskA-Regular;
+        opacity: 0.6;
+        color: black;
+    }
+
+    .order-item-value {
+        font-family: SctoGroteskA-Medium;
+        font-size: 11px;
+        color: #000000;
+        letter-spacing: 0;
+    }
+
+
+    .item-total-prop {
+        font-family: SctoGroteskA-Regular;
+        font-size:10px;
+        line-height:22px;
+        padding:10px 0 0;
+        color:#000000;
+        opacity: 0.6;
+    }
+
+    .item-total-value {
+        font-family: SctoGroteskA-Medium;
+        font-size:11px;
+        line-height:22px;
+        color: black;
+    }
+
+    .using-aether-title {
+        font-family: GTAmerica-ExtendedRegular;
+        font-size: 28px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        margin-top:70px;
+        margin-bottom:67px;
+        display:block;
+        text-align:center
+    }
+
+    .using-aether-desc {
+        font-family: SctoGroteskA-Regular;
+        font-size: 16px;
+        line-height:24px;
+        color: #FFFFFF;
+        width:240px;
+        height:106px;
+        display:block;
+        margin: 0 auto;
+        margin-bottom:38px;
+    }
+
+    .download-guide-button {
+        font-family: GTAmerica-ExtendedMedium;
+        font-weight:bold;
+        font-size:14px;
+        line-height:70px;
+        text-align:center;
+        vertical-align:middle;
+        color: white;
+    }
+
+</style>
+</head>
+<body>
+    <table style="[*page_background_color*]margin:0 auto;padding-top:20px;max-width:700px;border:solid 1px black;" width="100%" cellspacing="0" cellpadding="0" align="center">
     <tbody>
     <tr>
         <td>
@@ -14,19 +185,27 @@
                         <span class="page-head-title">ORDER CANCELLED</span>
                     </td>
                 </tr>
-                <tr>
-                    <td style="margin-top: 70px;" align="left" width="100%">
-                        <span class="page-sub-title">Your order has been cancelled.</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left" width="100%">
-                        <span class="page-desc">We just processed your cancellation request. Your money will be refunded to your payment account within the next 3-5 working days. Should you have any questions, feel free to contact us any time.</span>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </td>
+    </tr>
+    <tr>
+      <td>
+        <table style="border-collapse:collapse;padding-bottom:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
+            <tbody>
+            <tr>
+                <td style="margin-top: 70px;" align="left" width="100%">
+                    <span class="page-sub-title">Your order has been cancelled.</span>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" width="100%">
+                    <span class="page-desc">We just processed your cancellation request. Your money will be refunded to your payment account within the next 3-5 working days. Should you have any questions, feel free to contact us any time.</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+      </td>
     </tr>
 
 
@@ -53,24 +232,24 @@
                                     <table class="shipping">
                                     <tbody>
                                         <tr>
-                                            <td style="padding-bottom:21px">
+                                            <td style="padding-bottom:16px">
                                             <span class="prop-name">Shipping Details</span>
                                             </td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*shipping_name*]</td>
+                                            <td class="prop-value">[*shipping_name*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*shipping_address*]</td>
+                                            <td class="prop-value">[*shipping_address*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*shipping_city*], [*shipping_state*], [*[*shipping_zip*]*]</td>
+                                            <td class="prop-value">[*shipping_city*], [*shipping_state*], [*[*shipping_zip*]*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*shipping_phone*]</td>
+                                            <td class="prop-value">[*shipping_phone*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*email*]</td>
+                                            <td class="prop-value">[*email*]</td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -79,24 +258,24 @@
                                     <table class="billing">
                                     <tbody>
                                         <tr>
-                                            <td style="padding-bottom:21px">
+                                            <td style="padding-bottom:16px">
                                             <span class="prop-name">Billing Details</span>
                                             </td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*billing_name*]</td>
+                                            <td class="prop-value">[*billing_name*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*billing_address*]</td>
+                                            <td class="prop-value">[*billing_address*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*billing_city*], [*billing_state*],[*billing_zip*]</td>
+                                            <td class="prop-value">[*billing_city*], [*billing_state*],[*billing_zip*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*billing_phone*]</td>
+                                            <td class="prop-value">[*billing_phone*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*email*]</td>
+                                            <td class="prop-value">[*email*]</td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -105,24 +284,24 @@
                                     <table class="shipping">
                                     <tbody>
                                         <tr>
-                                            <td style="padding-bottom:21px">
+                                            <td style="padding-bottom:16px">
                                                <span class="prop-name"> Payment Method</span>
                                             </td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td>[*payment*] [*paymentcard_preview*]</td>
-                                        </tr>
-                                        <tr style="height:24px">    
-                                            <td></td>
+                                            <td class="prop-value">[*payment*] [*paymentcard_preview*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td></td>
+                                            <td class="prop-value"></td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td></td>
+                                            <td class="prop-value"></td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td></td>
+                                            <td class="prop-value"></td>
+                                        </tr>
+                                        <tr style="height:24px">
+                                            <td class="prop-value"></td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -178,7 +357,7 @@
                     <tr style="height: 30px;"><td></td><td></td><td></td></tr>
                     <tr>
                         <td align="left" width="400">
-                        <!-- Invoice Falcon Email Code START --><table class='container' style='margin-bottom:25px'><tr><td><h4><a href=' '>Download Invoice</a ></h4></td></tr></table><!-- Invoice Falcon Email Code END -->
+                        <!-- Invoice Falcon Email Code START --><table class='container' style='border-spacing:0px;'><tr><td><h4><a href=' '>Download Invoice</a ></h4></td></tr></table><!-- Invoice Falcon Email Code END -->
                         </td>
                         <td align="left" width="100"><span class="item-total-prop">Subtotal</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*subtotal*]</span></td>
@@ -198,9 +377,9 @@
                         <td align="left" width="100"><span class="item-total-prop">Shipping</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*total_shipping*]</span></td>
                     </tr>
-                    <tr>
+                    <tr style="line-height:30px;">
                         <td align="left" width="400"></td>
-                        <td align="left" width="100"><span class="item-total-prop" style="font-family: SctoGroteskA-Medium;">Total</span></td>
+                        <td align="left" width="100"><span class="item-total-prop" style="font-family: SctoGroteskA-Medium;font-size:12px;opacity:1;">Total</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*grand_total*]</span></td>
                     </tr>
                     <tr style="height:50px"></tr>
@@ -209,6 +388,7 @@
         </td>
     </tr>
     <!-- end items totals -->
-
     </tbody>
 </table>
+</body>
+</html>
