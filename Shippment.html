@@ -19,7 +19,7 @@
         color:black;
         display:block;
         margin-top:70px;
-        font-size:28px;
+        font-size:24px;
     }
 
     .page-desc {
@@ -30,7 +30,7 @@
         margin-top:30px;
         margin-bottom:35px;
         display:block;
-        max-width: 430px;
+        max-width: 400px;
     }
 
     span.order-id {
@@ -143,7 +143,7 @@
         margin-top:70px;
         margin-bottom:67px;
         display:block;
-        text-align:center
+        text-align:left;
     }
 
     .using-aether-desc {
@@ -171,7 +171,7 @@
 </style>
 </head>
 <body>
-    <table style="[*page_background_color*]margin:0 auto;padding-top:20px;max-width:700px;border:solid 1px black;" width="100%" cellspacing="0" cellpadding="0" align="center">
+    <table style="[*page_background_color*]margin:0 auto;padding-top:20px;max-width:700px;border-top:solid 1px black;border-left:solid 1px black;border-right:solid 1px black;" width="100%" cellspacing="0" cellpadding="0" align="center">
     <tbody>
     <tr>
         <td>
@@ -196,7 +196,7 @@
             <tbody>
               <tr>
                   <td style="margin-top: 70px;" align="left" width="100%">
-                      <span class="page-sub-title">Dear, [*first_name*]</span>
+                      <span class="page-sub-title">Dear [*first_name*],</span>
                   </td>
               </tr>
               <tr>
@@ -225,7 +225,7 @@
                 <tr>
                     <td align="left">
                         <span class="order-id">
-                            YOUR ORDER [*order_external*]
+                            YOUR ORDER #[*order_external*]
                         </span>
                         <span  class="order-date">
                             [*orderdate*]
@@ -366,7 +366,6 @@
                     <tr style="height: 30px;"><td></td><td></td><td></td></tr>
                     <tr>
                         <td align="left" width="400">
-                        <!-- Invoice Falcon Email Code START --><table class='container' style='border-spacing:0px;'><tr><td><h4><a href=' '>Download Invoice</a ></h4></td></tr></table><!-- Invoice Falcon Email Code END -->
                         </td>
                         <td align="left" width="100"><span class="item-total-prop">Subtotal</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*subtotal*]</span></td>
@@ -429,7 +428,7 @@
                         </table>
                     </td>
                     <td width="50%">
-                        <img style="width:100%; display: block; height: auto;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/mail-modal.png?v=1608048521" />
+                        <img style="width:100%; display: block; height: 440px;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/mail-modal.png?v=1608048521" />
                     </td>
                 </tr>
                 </tbody>

@@ -58,7 +58,7 @@
       color:black;
       display:block;
       margin-top:70px;
-      font-size:28px;
+      font-size:24px;
   }
 
   .page-desc {
@@ -69,7 +69,7 @@
       margin-top:30px;
       margin-bottom:35px;
       display:block;
-      max-width: 430px;
+      max-width: 400px;
   }
 
   span.order-id {
@@ -212,37 +212,54 @@
 
 
 
-<table style="background-color:white;margin:0 auto;min-width=600px;max-width:700px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+<table style="background-color:white;margin:0 auto;padding-top:20px;max-width:700px;border:solid 1px black;" width="100%" cellspacing="0" cellpadding="0" align="center">
     <tbody>
     <tr>
         <td>
             <table style="border-collapse:collapse;padding-bottom:20px;padding-top:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
                 <tbody>
-                <tr style="border-bottom:solid 1px #979797;height: 50px;">
-                    <td align="left" width="50%">
-                        <span style="font-size:24px;">Aether</span>
-                    </td>
-                    <td align="right" width="50%">
-                        <span style="font-family: Helvetica;color:black;font-size:14px;white-space: nowrap;">ABANDONED CART</span>
+                <tr>
+                    <td>
+                        <table style="border-collapse:collapse;padding-bottom:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
+                            <tbody>
+                            <tr style="border-bottom:solid 1px #979797;height: 100px;">
+                                <td align="left" width="50%">
+                                    <img class="prototype-logo" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Logotype.png?v=1608042370" />
+                                </td>
+                                <td align="right" width="50%">
+                                    <span class="page-head-title">ABANDONED CART</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </td>
                 </tr>
                 <tr>
-                    <td style="margin-top: 70px;" align="left" width="100%">
-                        <span style="font-family: Helvetica;color:black;display:block;margin-top:70px;font-size:28px;">Forgot something?</span>
-                    </td>
+                  <td>
+                    <table style="border-collapse:collapse;padding-bottom:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
+                        <tbody>
+                        <tr>
+                            <td style="margin-top: 70px;" align="left" width="100%">
+                                <span class="page-sub-title">Forgot something?</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100%">
+                                <span class="page-desc">Thank you for coming to see us at Aether. We noticed you have unchecked out items in your shopping cart. In case you’re still thinking about your purchase we have attached the link below for your convenience. </span>
+                                <span class="page-desc">If there’s anything you’d like to ask about our products and services feel free to reach us at this email and we will get back to you as fast as possible .<span>
+                                  {% if custom_message != blank %}
+                                  <p>{{ custom_message }}</p>
+                                  {% else %}
+                                  <p>{{ email_body }}</p>
+                                  {% endif %}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                  </td>
                 </tr>
                 <tr>
                     <td align="left" width="100%">
-                        <p style="font-family: Helvetica;color:black;font-size:16px;line-height:24px;margin-top:30px;margin-bottom:50px;display:block;">Thank you for coming to see us at Aether. We noticed you have unchecked out items in your shopping cart. In case you’re still thinking about your purchase we have attached the link below for your convenience. </p>
-<p style="font-family: Helvetica;color:black;font-size:16px;line-height:24px;margin-top:30px;margin-bottom:50px;display:block;">If there’s anything you’d like to ask about our products and services feel free to reach us at this email and we will get back to you as fast as possible .</p>
-                        {% if custom_message != blank %}
-                        <p>{{ custom_message }}</p>
-                        {% else %}
-
-
-
-                        <p>{{ email_body }}</p>
-                        {% endif %}
                         <a style="text-decoration:none;" href="https://aether-eyewear.com/cart" target="_blank" rel="noopener noreferrer">
                             <span style="display: inline-block;color:white;font-weight:bold;font-size:14px;line-height:70px;width:300px;background-color:black;text-align:center;vertical-align:middle;font-family: Helvetica;margin-bottom:50px;">CHECK OUT NOW
                             </span>
@@ -259,10 +276,10 @@
                 <tbody>
                 <tr>
                     <td align="left">
-                        <span style="font-family: Helvetica;font-size:14px;font-weight:bold;line-height:19px;padding-bottom:20px;text-align:left;float:left;">
+                        <span class="order-id>
                             ORDER SUMMARY
                         </span>
-                        <span style="font-family: Helvetica;font-size:12px;min-width:200px;line-height:19px;padding-bottom:20px;text-align:right;float:right;">
+                        <span class="order-date">
                             {{created_at | date: "%d %b %Y"}}
                         </span>
                     </td>
@@ -284,19 +301,19 @@
                         <table style="max-width:500px;margin-bottom:30px;border-collapse:collapse;">
                         <tbody>
                             <tr style="vertical-align:top;height:30px">
-                                <td width="100px">Frame</td>
-                                <td width="100px">Type</td>
-                                <td width="100px">Colour</td>
-                                <td width="100px">Quantity</td>
-                                <td width="100px">Total</td>
+                                <td width="100px" style="font-family:SctoGroteskA-Regular;">Frame</td>
+                                <td width="100px" style="font-family:SctoGroteskA-Regular;">Type</td>
+                                <td width="100px" style="font-family:SctoGroteskA-Regular;">Colour</td>
+                                <td width="100px" style="font-family:SctoGroteskA-Regular;">Quantity</td>
+                                <td width="100px" style="font-family:SctoGroteskA-Regular;">Total</td>
                             </tr>
 
                             <tr style="height:30px">
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> {{line.title}}</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> {{line.properties["type"]}}</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">{{line.properties["color"]}}</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">x {{line.quantity}}</td>
-                                <td width="100px" style="font-family: Helvetica;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">{{line.line_price}}</td>
+                                <td width="100px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> {{line.title}}</td>
+                                <td width="100px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;"> {{line.properties["type"]}}</td>
+                                <td width="100px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">{{line.properties["color"]}}</td>
+                                <td width="100px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">x {{line.quantity}}</td>
+                                <td width="100px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;font-weight:bold;">{{line.line_price}}</td>
                             </tr>
 
                         </tbody>
@@ -318,53 +335,15 @@
                 <tbody>
                     <tr style="height: 72px">
                         <td align="left" width="400"></td>
-                        <td align="left" width="100"><span style="font-size:14px;line-height:22px;">Total</span></td>
-                        <td align="left" width="100"><span style="font-size:14px;line-height:22px;padding:0 0 10px;">{{total_price | money_with_currency}}</span></td>
+                        <td align="left" width="100"><span style="font-family:SctoGroteskA-Medium;font-size:12px;line-height:22px;">Total</span></td>
+                        <td align="left" width="100"><span style="font-family:SctoGroteskA-Medium;font-size:12px;line-height:22px;padding:0 0 10px;">{{total_price | money_with_currency}}</span></td>
                     </tr>
                 </tbody>
             </table>
         </td>
     </tr>
     <!-- end items totals -->
-    <tr>
-        <td>
-            <table style="border-collapse:collapse;max-width:700px;margin:0 auto;height:440px;" width="100%" cellspacing="0" cellpadding="0" align="center">
-                <tbody>
-                <tr>
-                    <td style="background-color:black;vertical-align:top;" width="50%">
-                        <table style="border-collapse:collapse;margin:0 auto;" cellspacing="0" cellpadding="0" align="center">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <span style="font-family: Helvetica;font-size:28px;margin-top:73px;margin-bottom:67px;display:block;color:white;text-align:center">Using Aether</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span style="font-family: Helvetica;font-size: 16px;line-height:24px;color: #FFFFFF;width:240px;height:106px;display:block;margin: 0 auto;margin-bottom:38px;">Download the quick start guide here. Here could be one more sentence, it feels a bit empty at the moment.
-                                </td>
-                            </tr>
-                            <tr>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;border: solid 1px white;margin-top:38px;">
-                                    <a style="text-decoration:none;" href="[*order_url*]" target="_blank" rel="noopener noreferrer">
-                                        <span style="color:white;font-weight:bold;font-size:14px;line-height:70px;background-color:black;text-align:center;vertical-align:middle;font-family: Helvetica;">DOWNLOAD GUIDE
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td width="50%">
-                        <img style="width:100%; display: block; height:440px;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/aether-glasses_R1_brown_female_02_LR.jpg?v=1605777891" />
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
+
 
     </tbody>
 </table>
