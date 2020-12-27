@@ -30,7 +30,7 @@
         margin-top:30px;
         margin-bottom:35px;
         display:block;
-        max-width: 400px;
+        max-width: 370px;
     }
 
     span.order-id {
@@ -63,7 +63,7 @@
     }
 
     table.shipping {
-        width:180px;
+        width:185px;
         padding-bottom:30px;
         font-family: SctoGroteskA-Regular;
         font-size:12px;
@@ -71,7 +71,7 @@
         line-height: 21px;
     }
     table.billing {
-        width:180px;
+        width:185px;
         padding-bottom:30px;
         font-family: SctoGroteskA-Regular;
         font-size:12px;
@@ -169,47 +169,19 @@
 </style>
 </head>
 <body>
-    <table style="[*page_background_color*]margin:0 auto;padding-top:20px;max-width:700px;border-top:solid 1px black;border-left:solid 1px black;border-right:solid 1px black;" width="100%" cellspacing="0" cellpadding="0" align="center">
+    <table style="[*page_background_color*]margin:0 auto;padding-top:20px;width:600px;" width="100%" cellspacing="0" cellpadding="0" align="center">
     <tbody>
     <tr>
         <td>
-            <table style="border-collapse:collapse;padding-bottom:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
-                <tbody>
-                <tr style="border-bottom:solid 1px #979797;height: 100px;">
-                    <td align="left" width="50%">
-                        <img class="prototype-logo" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Logotype.png?v=1608042370" />
-                    </td>
-                    <td align="right" width="50%">
-                        <span class="page-head-title">ORDER RECEIVED</span>
-                    </td>
-                </tr>
-
-                </tbody>
-            </table>
+          <a href="#">
+            <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/orderreceived2.png?v=1608885105" />
+          </a>
         </td>
-    </tr>
-    <tr>
-      <td>
-        <table style="border-collapse:collapse;padding-bottom:20px;max-width:600px;margin:0 auto;" width="100%" align="center">
-            <tbody>
-              <tr>
-                  <td style="margin-top: 70px;" align="left" width="100%">
-                      <span class="page-sub-title">Thank you for your order, [*first_name*]</span>
-                  </td>
-              </tr>
-              <tr>
-                  <td align="left" width="100%">
-                      <span class="page-desc" style="margin-bottom:70px;">Your order has been successfully placed.  We will provide you with a tracking number once your product has been shipped.</span>
-                  </td>
-              </tr>
-            </tbody>
-        </table>
-      </td>
     </tr>
 
     <tr>
         <td style="background-color:#f0f0f0;">
-            <table style="border-collapse:collapse;max-width:600px;margin-top:77px;padding:20px 0;" width="100%" cellspacing="0" cellpadding="0" align="center">
+            <table style="border-collapse:collapse;max-width:500px;margin-top:77px;padding:50px 0;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                 <tr>
                     <td align="left">
@@ -279,7 +251,7 @@
                                     </table>
                                 </td>
                                 <td>
-                                    <table class="shipping">
+                                    <table class="shipping" style="width:130px;">
                                     <tbody>
                                         <tr>
                                             <td style="padding-bottom:16px">
@@ -287,10 +259,10 @@
                                             </td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td class="prop-value">[*payment*] [*paymentcard_preview*]</td>
+                                            <td class="prop-value">[*payment*]</td>
                                         </tr>
                                         <tr style="height:24px">
-                                            <td class="prop-value"></td>
+                                            <td class="prop-value">[*paymentcard_preview*]</td>
                                         </tr>
                                         <tr style="height:24px">
                                             <td class="prop-value"></td>
@@ -316,26 +288,26 @@
     <!-- @repeat items -->
     <tr>
         <td style="background-color:#f0f0f0;">
-            <table style="border-collapse:collapse;margin:0 auto;border-bottom:1px solid #f0f0f0;max-width:600px;margin-top:30px;margin-bottom:30px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+            <table style="border-collapse:collapse;margin:0 auto;border-bottom:1px solid #f0f0f0;max-width:500px;margin: 30px 50px;" width="100%" cellspacing="0" cellpadding="0" align="center">
             <tbody>
                 <tr>
                     <td style="width:100px; height:60px;display:inline-block;"><a href="[*product_url*]"><img src="[*product_image*]" width="60" height="60" data-imagetype="External" alt="[*product_name*]" /> </a></td>
                     <td>
-                        <table style="max-width:500px;border-collapse:collapse;">
+                        <table style="max-width:400px;border-collapse:collapse;">
                         <tbody>
                             <tr style="vertical-align:top;height:30px">
-                                <td width="100px" class="order-item-prop">Frame</td>
-                                <td width="100px" class="order-item-prop">Type</td>
-                                <td width="100px" class="order-item-prop">Colour</td>
-                                <td width="100px" class="order-item-prop">Quantity</td>
-                                <td width="100px" class="order-item-prop">Total</td>
+                                <td width="80px" class="order-item-prop">Frame</td>
+                                <td width="80px" class="order-item-prop">Type</td>
+                                <td width="80px" class="order-item-prop">Colour</td>
+                                <td width="80px" class="order-item-prop">Quantity</td>
+                                <td width="80px" class="order-item-prop">Total</td>
                             </tr>
                             <tr style="height:30px">
-                                <td width="100px" class="order-item-value"> [*product_name*]</td>
-                                <td width="100px" class="order-item-value"> [*product_sku*]</td>
-                                <td width="100px" class="order-item-value">[*item_options*]</td>
-                                <td width="100px" class="order-item-value">x [*item_quantity*]</td>
-                                <td width="100px" class="order-item-value">[*item_cost*][*item_coupon*]</td>
+                                <td width="80px" class="order-item-value"> [*product_name*]</td>
+                                <td width="80px" class="order-item-value"> [*product_sku*]</td>
+                                <td width="80px" class="order-item-value">[*item_options*]</td>
+                                <td width="80px" class="order-item-value">x [*item_quantity*]</td>
+                                <td width="80px" class="order-item-value">[*item_cost*][*item_coupon*]</td>
                             </tr>
                         </tbody>
                         </table>
@@ -350,76 +322,36 @@
     <!-- items totals -->
     <tr>
         <td style="background-color:#f0f0f0;">
-            <table style="max-width:600px;border-collapse:collapse;margin:0 auto;border-top:1px solid #979797;" cellspacing="0" cellpadding="0" align="center">
+            <table style="width:500px;border-collapse:collapse;margin:0 auto;border-top:1px solid #979797;" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                     <tr style="height: 30px;"><td></td><td></td><td></td></tr>
                     <tr>
-                        <td align="left" width="400">
+                        <td align="left" width="300">
                         </td>
                         <td align="left" width="100"><span class="item-total-prop">Subtotal</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*subtotal*]</span></td>
                     </tr>
                     <tr>
-                        <td align="left" width="400"></td>
+                        <td align="left" width="300"></td>
                         <td align="left" width="100"><span class="item-total-prop">Discount</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*total_discount*]</span></td>
                     </tr>
                     <tr>
-                        <td align="left" width="400"></td>
+                        <td align="left" width="300"></td>
                         <td align="left" width="100"><span class="item-total-prop">Tax</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*total_tax*]</span></td>
                     </tr>
                     <tr>
-                        <td align="left" width="400"></td>
+                        <td align="left" width="300"></td>
                         <td align="left" width="100"><span class="item-total-prop">Shipping</span></td>
                         <td align="left" width="100"><span class="item-total-value">$[*total_shipping*]</span></td>
                     </tr>
                     <tr style="line-height:30px;">
-                        <td align="left" width="400"></td>
+                        <td align="left" width="300"></td>
                         <td align="left" width="100"><span class="item-total-prop" style="font-family: SctoGroteskA-Medium;font-size:12px;opacity:1;">Total</span></td>
                         <td align="left" width="100"><span class="item-total-value" style="font-size:12px;">$[*grand_total*]</span></td>
                     </tr>
                     <tr style="height:50px"></tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    <!-- end items totals -->
-    <tr>
-        <td>
-            <table style="border-collapse:collapse;max-width:700px;margin:0 auto;height:440px;" width="100%" cellspacing="0" cellpadding="0" align="center">
-                <tbody>
-                <tr>
-                    <td style="background-color:black;vertical-align:top;" width="50%">
-                        <table style="border-collapse:collapse;margin:0 auto;" cellspacing="0" cellpadding="0" align="center">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <span class="using-aether-title ">Using Aether</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="using-aether-desc">Download the quick start guide here. Here could be one more sentence, it feels a bit empty at the moment.
-                                </td>
-                            </tr>
-                            <tr>
-                            </tr>
-                            <tr>
-                                <td style="[*button_background_color*]text-align:center;border: solid 1px white;margin-top:38px;">
-                                    <a style="text-decoration:none;" href="[*order_url*]" target="_blank" rel="noopener noreferrer">
-                                        <span class="download-guide-button" style="[*button_text_color*]">DOWNLOAD GUIDE
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td width="50%">
-                        <img style="width:100%; display: block; height: 440px;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/mail-modal.png?v=1608048521" />
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </td>
