@@ -1,172 +1,24 @@
-<html>
-<head>
-<style>
-    img.prototype-logo {
-        display: inline-block;
-        width: 121px;
-        height: 29px;
-    }
-    span.page-head-title {
-        font-family: GTAmerica-ExtendedMedium;
-        color:black;
-        font-size:14px;
-        white-space: nowrap;
-    }
+{% capture email_created_at %}
 
+{% for transaction in transactions %}
+        {% unless transaction.kind == "capture" or transaction.kind == "void" %}
+          {% assign order_transaction_time = transaction.created_at %}
+        {% endunless %}
+      {% endfor %}
 
-    .page-sub-title {
-        font-family: GTAmerica-ExtendedRegular;
-        color:black;
-        display:block;
-        margin-top:70px;
-        font-size:24px;
-    }
+{% endcapture %}
 
-    .page-desc {
-        font-family: SctoGroteskA-Regular;
-        color:black;
-        font-size:16px;
-        line-height:24px;
-        margin-top:30px;
-        margin-bottom:35px;
-        display:block;
-        max-width: 370px;
-    }
-
-    span.order-id {
-        font-family: GTAmerica-ExtendedMedium;
-        font-size:14px;
-        font-weight:bold;
-        line-height:19px;
-        padding-bottom:30px;
-        text-align:left;
-        float:left;
-        color: black;
-    }
-
-    span.order-date {
-        font-family: SctoGroteskA-Regular;
-        font-size:12px;
-        color: black;
-        min-width:200px;
-        line-height:19px;
-        padding-bottom:30px;
-        text-align:right;
-        float:right;
-    }
-
-    table.shipping-and-billing {
-        width:100%;
-        border-top: 1px solid #979797;
-        border-bottom: 1px solid #979797;
-        padding-top:50px;
-    }
-
-    table.shipping {
-        width:185px;
-        padding-bottom:30px;
-        font-family: SctoGroteskA-Regular;
-        font-size:12px;
-        color: black;
-        line-height: 21px;
-    }
-    table.billing {
-        width:185px;
-        padding-bottom:30px;
-        font-family: SctoGroteskA-Regular;
-        font-size:12px;
-        color: black;
-        line-height: 21px;
-    }
-
-    table.shipping .prop-value{
-      opacity: 0.6;
-    }
-
-    table.billing .prop-value{
-      opacity: 0.6;
-    }
-
-    table.shipping span.prop-name {
-        font-family: SctoGroteskA-Medium;
-        font-size:12px;
-        color:black;
-        font-weight:bold;
-        opacity: 1;
-    }
-
-    table.billing span.prop-name {
-        font-family: SctoGroteskA-Medium;
-        font-size:12px;
-        color:black;
-        font-weight:bold;
-        opacity: 1;
-    }
-
-    .order-item-prop {
-        font-family:SctoGroteskA-Regular;
-        color: black;
-        opacity: 0.6;
-    }
-
-    .order-item-value {
-        font-family: SctoGroteskA-Medium;
-        font-size: 11px;
-        color: #000000;
-        letter-spacing: 0;
-    }
-
-
-    .item-total-prop {
-        font-family: SctoGroteskA-Regular;
-        font-size:10px;
-        line-height:22px;
-        padding:10px 0 0;
-        color:#000000;
-        opacity: 0.6;
-    }
-
-    .item-total-value {
-        font-family: SctoGroteskA-Medium;
-        font-size:11px;
-        line-height:22px;
-        color: black;
-    }
-
-    .using-aether-title {
-        font-family: GTAmerica-ExtendedRegular;
-        font-size: 28px;
-        color: #FFFFFF;
-        letter-spacing: 0;
-        margin-top:70px;
-        margin-bottom:67px;
-        display:block;
-        text-align:left;
-    }
-
-    .using-aether-desc {
-        font-family: SctoGroteskA-Regular;
-        font-size: 16px;
-        line-height:24px;
-        color: #FFFFFF;
-        width:240px;
-        height:106px;
-        display:block;
-        margin: 0 auto;
-        margin-bottom:38px;
-    }
-
-    .download-guide-button {
-        font-family: GTAmerica-ExtendedMedium;
-        font-weight:bold;
-        font-size:14px;
-        line-height:70px;
-        text-align:center;
-        vertical-align:middle;
-        color: white;
-    }
-
-</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+  <style>
+    .button__cell { background: {{ shop.email_accent_color }}; }
+    a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
+  </style>
 </head>
 <body>
     <table style="[*page_background_color*]margin:0 auto;padding-top:20px;width:600px;" width="100%" cellspacing="0" cellpadding="0" align="center">
@@ -174,7 +26,7 @@
     <tr>
         <td>
           <a href="#">
-            <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/orderreceived2.png?v=1608885105" />
+            <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/ORDER_RECEIVED_2x_f9f1a1c5-ac62-49dd-b465-24653ea06569.png?v=1609134281" />
           </a>
         </td>
     </tr>
@@ -185,93 +37,94 @@
                 <tbody>
                 <tr>
                     <td align="left">
-                        <span class="order-id">
-                            YOUR ORDER #[*order_external*]
+                        <span style="font-family: GTAmerica-ExtendedMedium;font-size:14px;font-weight:bold;line-height:19px;padding-bottom:30px;text-align:left;float:left;color: black;">
+                            YOUR ORDER {{ order_name }}
                         </span>
-                        <span  class="order-date">
-                            [*orderdate*]
+                        <span style="font-family: SctoGroteskA-Regular;font-size:12px;color: black;min-width:200px;line-height:19px;padding-bottom:30px;text-align:right;float:right;">
+                          {{order_transaction_time | date: "%d %b %Y"}}
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td style="width:100%;">
-                        <table class="shipping-and-billing">
+                        <table style="border-collapse:collapse;width:100%;border-top: 1px solid #979797;padding-top:50px;">
                         <tbody>
                             <tr>
-                                <td>
-                                    <table class="shipping">
+                                <td style="padding-top:50px;padding-bottom:50px;vertical-align:top;">
+                                    <table style="width:185px;padding-bottom:30px;font-family: SctoGroteskA-Regular;font-size:12px;color: black;line-height: 21px;">
                                     <tbody>
                                         <tr>
                                             <td style="padding-bottom:16px">
-                                            <span class="prop-name">Shipping Details</span>
+                                            <span style="font-family: SctoGroteskA-Medium;font-size:12px;color:black;font-weight:bold;opacity: 1;">Shipping Details</span>
                                             </td>
                                         </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*shipping_name*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*shipping_address*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*shipping_city*], [*shipping_state*], [*[*shipping_zip*]*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*shipping_phone*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*email*]</td>
+                                        <tr style="height:120px">
+                                          <td>
+                                          <ul style="list-style:none;padding-left:0;margin:0;">
+                                            <li style="opacity: 0.6;">{{ shipping_address.name }}</li>
+                                            <li style="opacity: 0.6;">{{ shipping_address.street }}</li>
+                                            <li style="opacity: 0.6;">{{shipping_address.city}} {{shipping_address.province}} {{ shipping_address.country }}, {{ shipping_address.zip }}</li>
+                                            <li style="opacity: 0.6;">{{ shipping_address.phone }}</li>
+                                            <li style="opacity: 0.6;">{{email}}</li>
+                                          </ul>
+                                        </td>
                                         </tr>
                                     </tbody>
                                     </table>
                                 </td>
-                                <td>
-                                    <table class="billing">
+                                <td style="padding-top:50px;padding-bottom:50px;vertical-align:top;">
+                                    <table style="width:185px;padding-bottom:30px;font-family: SctoGroteskA-Regular;font-size:12px;color: black;line-height: 21px;">
                                     <tbody>
                                         <tr>
-                                            <td style="padding-bottom:16px">
-                                            <span class="prop-name">Billing Details</span>
+                                            <td style="padding-bottom:16px;">
+                                            <span style="font-family: SctoGroteskA-Medium;font-size:12px;color:black;font-weight:bold;opacity: 1;">Billing Details</span>
                                             </td>
                                         </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*billing_name*]</td>
+                                        <tr style="height:120px;">
+                                          <td style="margin:0; vertical-align:top;">
+                                          <ul style="list-style:none;padding-left:0;margin:0;">
+                                            <li style="opacity: 0.6;">{{ billing_address.name }}</li>
+                                            <li style="opacity: 0.6;">{{ billing_address.address }}</li>
+                                            <li style="opacity: 0.6;">{{billing_address.city}} {{billing_address.province}} {{ billing_address.country }}, {{ billing_address.zip }}</li>
+                                            <li style="opacity: 0.6;">{{ billing_address.phone }}</li>
+                                            <li style="opacity: 0.6;">{{email}}</li>
+                                          </ul>
+                                          </td>
                                         </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*billing_address*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*billing_city*], [*billing_state*],[*billing_zip*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*billing_phone*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*email*]</td>
                                         </tr>
                                     </tbody>
                                     </table>
                                 </td>
-                                <td>
-                                    <table class="shipping" style="width:130px;">
+                                <td style="padding-top:50px;padding-bottom:50px;vertical-align:top;">
+                                    <table style="width:130px;padding-bottom:30px;font-family: SctoGroteskA-Regular;font-size:12px;color: black;line-height: 21px;">
                                     <tbody>
                                         <tr>
                                             <td style="padding-bottom:16px">
-                                               <span class="prop-name"> Payment Method</span>
+                                               <span style="font-family: SctoGroteskA-Medium;font-size:12px;color:black;font-weight:bold;opacity: 1;"> Payment Method</span>
                                             </td>
                                         </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*payment*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value">[*paymentcard_preview*]</td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value"></td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value"></td>
-                                        </tr>
-                                        <tr style="height:24px">
-                                            <td class="prop-value"></td>
+                                        <tr style="height:120px;vertical-align:top;">
+                                            <td style="opacity: 0.6;">
+                                              <ul style="list-style:none;padding-left:0;margin:0;">
+                                              {% for transaction in transactions %}
+                                                {% if transaction.status == "success" or transaction.status == "pending" %}
+                                                  {% if transaction.kind == "authorization" or transaction.kind == "sale" %}
+                                                    {% if transaction.payment_details.credit_card_company %}
+                                                        <li style="font-family: SctoGroteskA-Regular;font-size:12px;color:black;">{{ transaction.payment_details.credit_card_company }}</li>
+                                                        <li style="font-family: SctoGroteskA-Regular;font-size:12px;color:black;">**** {{ transaction.payment_details.credit_card_last_four_digits }}</li>
+                                                      {% elsif transaction.gateway_display_name == "Gift card" %}
+                                                        <li style="font-family: SctoGroteskA-Regular;font-size:12px;color:black;">{{ transaction.gateway_display_name }}</li>
+                                                        <li style="font-family: SctoGroteskA-Regular;font-size:12px;color:black;">{{ transaction.payment_details.gift_card.last_four_characters }}</li>
+                                                      {% else %}
+                                                          <li style="font-family: SctoGroteskA-Regular;font-size:12px;color:black;">
+                                                          {{ transaction.gateway_display_name }}
+                                                          </li>
+                                                      {% endif %}
+                                                  {% endif %}
+                                                {% endif %}
+                                              {% endfor %}
+                                              </ul>
+                                              </td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -288,31 +141,40 @@
     <!-- @repeat items -->
     <tr>
         <td style="background-color:#f0f0f0;">
-            <table style="border-collapse:collapse;margin:0 auto;border-bottom:1px solid #f0f0f0;max-width:500px;margin: 30px 50px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+            <table style="border-collapse:collapse;margin:0 auto;max-width:500px;margin: 0px 50px;" width="100%" cellspacing="0" cellpadding="0" align="center">
             <tbody>
-                <tr>
-                    <td style="width:100px; height:60px;display:inline-block;"><a href="[*product_url*]"><img src="[*product_image*]" width="60" height="60" data-imagetype="External" alt="[*product_name*]" /> </a></td>
-                    <td>
+              {% for line in subtotal_line_items %}
+                <tr style="border-top: solid 1px #979797; height: 120px;">
+                    <td style="width:100px; height:60px;display:inline-block;vertial-align:top;padding-top:30px;">
+                      {% if line.image %}
+                      <img src="{{ line | img_url: 'compact_cropped' }}" width="60" height="60" data-imagetype="External" />
+                      {% endif %}
+                    </td>
+                    <td style="vertical-align:top;padding-top:30px;">
+                      {% if line.product.title %}
+                        {% assign line_title = line.product.title %}
+                      {% else %}
+                        {% assign line_title = line.title %}
+                      {% endif %}
                         <table style="max-width:400px;border-collapse:collapse;">
                         <tbody>
-                            <tr style="vertical-align:top;height:30px">
-                                <td width="80px" class="order-item-prop">Frame</td>
-                                <td width="80px" class="order-item-prop">Type</td>
-                                <td width="80px" class="order-item-prop">Colour</td>
-                                <td width="80px" class="order-item-prop">Quantity</td>
-                                <td width="80px" class="order-item-prop">Total</td>
+                            <tr style="vertical-align:top;height:30p">
+                                <td width="129px" style="font-family:SctoGroteskA-Regular;color: black;font-size:10px;opacity: 0.6;">Product</td>
+                                <td width="111px" style="font-family:SctoGroteskA-Regular;color: black;font-size:10px;opacity: 0.6;">Colour</td>
+                                <td width="110px" style="font-family:SctoGroteskA-Regular;color: black;font-size:10px;opacity: 0.6;">Quantity</td>
+                                <td width="50px" style="font-family:SctoGroteskA-Regular;color: black;font-size:10px;opacity: 0.6;">Total</td>
                             </tr>
                             <tr style="height:30px">
-                                <td width="80px" class="order-item-value"> [*product_name*]</td>
-                                <td width="80px" class="order-item-value"> [*product_sku*]</td>
-                                <td width="80px" class="order-item-value">[*item_options*]</td>
-                                <td width="80px" class="order-item-value">x [*item_quantity*]</td>
-                                <td width="80px" class="order-item-value">[*item_cost*][*item_coupon*]</td>
+                                <td width="129px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;"> {{line_title}}</td>
+                                <td width="111px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">{{line.properties["colour"]}}</td>
+                                <td width="110px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">x {{line.quantity}}</td>
+                                <td width="50px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">{{line.final_price | money}}</td>
                             </tr>
                         </tbody>
                         </table>
                     </td>
                 </tr>
+              {% endfor %}
             </tbody>
             </table>
         </td>
@@ -326,35 +188,42 @@
                 <tbody>
                     <tr style="height: 30px;"><td></td><td></td><td></td></tr>
                     <tr>
-                        <td align="left" width="300">
+                        <td align="left" width="360">
                         </td>
-                        <td align="left" width="100"><span class="item-total-prop">Subtotal</span></td>
-                        <td align="left" width="100"><span class="item-total-value">$[*subtotal*]</span></td>
+                        <td align="left" width="90"><span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:10px;">Subtotal</span></td>
+                        <td align="left" width="50"><span style="font-family: SctoGroteskA-Medium;font-size:11px;line-height:22px;color: black;">{{ subtotal_price | money }}</span></td>
                     </tr>
                     <tr>
-                        <td align="left" width="300"></td>
-                        <td align="left" width="100"><span class="item-total-prop">Discount</span></td>
-                        <td align="left" width="100"><span class="item-total-value">$[*total_discount*]</span></td>
+                        <td align="left" width="360"></td>
+                        <td align="left" width="90"><span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:10px;">Discount</span></td>
+                        <td align="left" width="50"><span style="font-family: SctoGroteskA-Medium;font-size:11px;line-height:22px;color: black;">{{discounts_savings | money}}</span></td>
                     </tr>
                     <tr>
-                        <td align="left" width="300"></td>
-                        <td align="left" width="100"><span class="item-total-prop">Tax</span></td>
-                        <td align="left" width="100"><span class="item-total-value">$[*total_tax*]</span></td>
+                        <td align="left" width="360"></td>
+                        <td align="left" width="90"><span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:10px;">Tax</span></td>
+                        <td align="left" width="50"><span style="font-family: SctoGroteskA-Medium;font-size:11px;line-height:22px;color: black;">{{ tax_price | money }}</span></td>
                     </tr>
                     <tr>
-                        <td align="left" width="300"></td>
-                        <td align="left" width="100"><span class="item-total-prop">Shipping</span></td>
-                        <td align="left" width="100"><span class="item-total-value">$[*total_shipping*]</span></td>
+                        <td align="left" width="360"></td>
+                        <td align="left" width="90"><span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:10px;">Shipping</span></td>
+                        <td align="left" width="50"><span style="font-family: SctoGroteskA-Medium;font-size:11px;line-height:22px;color: black;">{{ shipping_price | money }}</span></td>
                     </tr>
                     <tr style="line-height:30px;">
-                        <td align="left" width="300"></td>
-                        <td align="left" width="100"><span class="item-total-prop" style="font-family: SctoGroteskA-Medium;font-size:12px;opacity:1;">Total</span></td>
-                        <td align="left" width="100"><span class="item-total-value" style="font-size:12px;">$[*grand_total*]</span></td>
+                        <td align="left" width="360"></td>
+                        <td align="left" width="90"><span  style="font-family: SctoGroteskA-Medium;color:black;font-size:12px;opacity:1;">Total</span></td>
+                        <td align="left" width="50"><span  style="font-size:12px;font-family: SctoGroteskA-Medium;font-size:11px;line-height:22px;color: black;">{{ total_price | money }}</span></td>
                     </tr>
                     <tr style="height:50px"></tr>
                 </tbody>
             </table>
         </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#">
+          <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Footer_Block_2x_199c994e-983d-4fd3-8826-faf91238cfd7.png?v=1609067656" />
+        </a>
+      </td>
     </tr>
     </tbody>
 </table>
