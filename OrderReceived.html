@@ -21,7 +21,7 @@
   </style>
 </head>
 <body>
-    <table style="[*page_background_color*]margin:0 auto;padding-top:20px;width:600px;" width="100%" cellspacing="0" cellpadding="0" align="center">
+    <table style="background-color:white;margin:0 auto;padding-top:20px;max-width:600px;width:600px;" width="100%" cellspacing="0" cellpadding="0" align="center">
     <tbody>
     <tr>
         <td>
@@ -33,7 +33,7 @@
 
     <tr>
         <td style="background-color:#f0f0f0;">
-            <table style="border-collapse:collapse;max-width:500px;margin-top:77px;padding:50px 0;" width="100%" cellspacing="0" cellpadding="0" align="center">
+            <table style="border-collapse:collapse;max-width:500px;margin-top:77px;padding-left:50px;padding-right:50px;" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                 <tr>
                     <td align="left">
@@ -60,13 +60,13 @@
                                         </tr>
                                         <tr style="height:120px">
                                           <td>
-                                          <ul style="list-style:none;padding-left:0;margin:0;">
-                                            <li style="opacity: 0.6;">{{ shipping_address.name }}</li>
-                                            <li style="opacity: 0.6;">{{ shipping_address.street }}</li>
-                                            <li style="opacity: 0.6;">{{shipping_address.city}} {{shipping_address.province}} {{ shipping_address.country }}, {{ shipping_address.zip }}</li>
-                                            <li style="opacity: 0.6;">{{ shipping_address.phone }}</li>
-                                            <li style="opacity: 0.6;">{{email}}</li>
-                                          </ul>
+                                          <div style="list-style:none;padding-left:0;margin:0;">
+                                            {% if shipping_address.name %} <div style="opacity: 0.6;">{{ shipping_address.name }}</div> {% endif %}
+                                            {% if shipping_address.street %}<div style="opacity: 0.6;">{{ shipping_address.street }}</div>{% endif %}
+                                            {% if shipping_address.city || shipping_address.province || shipping_address.country %}<div style="opacity: 0.6;">{{shipping_address.city}} {{shipping_address.province}} {{ shipping_address.country }}, {{ shipping_address.zip }}</div>{% endif %}
+                                            {% if shipping_address.phone %}<div style="opacity: 0.6;">{{ shipping_address.phone }}</div>{% endif %}
+                                            {% if email %}<div style="opacity: 0.6;">{{email}}</div>{% endif %}
+                                          </div>
                                         </td>
                                         </tr>
                                     </tbody>
@@ -82,13 +82,13 @@
                                         </tr>
                                         <tr style="height:120px;">
                                           <td style="margin:0; vertical-align:top;">
-                                          <ul style="list-style:none;padding-left:0;margin:0;">
-                                            <li style="opacity: 0.6;">{{ billing_address.name }}</li>
-                                            <li style="opacity: 0.6;">{{ billing_address.address }}</li>
-                                            <li style="opacity: 0.6;">{{billing_address.city}} {{billing_address.province}} {{ billing_address.country }}, {{ billing_address.zip }}</li>
-                                            <li style="opacity: 0.6;">{{ billing_address.phone }}</li>
-                                            <li style="opacity: 0.6;">{{email}}</li>
-                                          </ul>
+                                          <div style="list-style:none;padding-left:0;margin:0;">
+                                            {% if billing_address.name %} <div style="opacity: 0.6;">{{ billing_address.name }}</div>{% endif %}
+                                            {% if billing_address.street %}<div style="opacity: 0.6;">{{ billing_address.address }}</div>{% endif %}
+                                            {% if billing_address.city || billing_address.province || billing_address.country %}<div style="opacity: 0.6;">{{billing_address.city}} {{billing_address.province}} {{ billing_address.country }}, {{ billing_address.zip }}</div>{% endif %}
+                                            {% if billing_address.phone %}<div style="opacity: 0.6;">{{ billing_address.phone }}</div>{% endif %}
+                                            {% if email %}<div style="opacity: 0.6;">{{email}}</div>{% endif %}
+                                          </div>
                                           </td>
                                         </tr>
                                         </tr>
@@ -166,7 +166,11 @@
                             </tr>
                             <tr style="height:30px">
                                 <td width="129px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;"> {{line_title}}</td>
-                                <td width="111px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">{{line.properties["colour"]}}</td>
+                                <td width="111px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">
+                                  {% if line.variant.title != 'Default Title' %}
+                                    <span>{{ line.variant.title }}</span>
+                                  {% endif %}
+                                </td>
                                 <td width="110px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">x {{line.quantity}}</td>
                                 <td width="50px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">{{line.final_price | money}}</td>
                             </tr>
@@ -189,6 +193,7 @@
                     <tr style="height: 30px;"><td></td><td></td><td></td></tr>
                     <tr>
                         <td align="left" width="360">
+                          <span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:12px;">Ships by 22 March 2021</span>
                         </td>
                         <td align="left" width="90"><span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:10px;">Subtotal</span></td>
                         <td align="left" width="50"><span style="font-family: SctoGroteskA-Medium;font-size:11px;line-height:22px;color: black;">{{ subtotal_price | money }}</span></td>
@@ -221,7 +226,7 @@
     <tr>
       <td>
         <a href="#">
-          <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Footer_Block_2x_199c994e-983d-4fd3-8826-faf91238cfd7.png?v=1609067656" />
+          <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Footer_Block_2x_66c03a3f-1028-43fc-a691-09795a31fff5.png?v=1609230333" />
         </a>
       </td>
     </tr>
