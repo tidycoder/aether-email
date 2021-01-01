@@ -26,8 +26,22 @@
     <tr>
         <td>
           <a href="#">
-            <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/ORDER_RECEIVED_2x_3395d6cf-1a81-4b45-a7d7-0c3c8ceae3d7.png?v=1609502575" />
+            <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Intro_Block_2x_adc2e671-5811-44f5-bd66-e9eb5034aeaf.png?v=1609502631" />
           </a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <a style="text-decoration:none;" href="{{ order_status_url }}" target="_blank" rel="noopener noreferrer">
+              <span style="display: inline-block;color:white;font-weight:bold;font-size:14px;line-height:70px;width:300px;font-family:GTAmerica-ExtendedMedium;background-color:black;text-align:center;vertical-align:middle;margin-top:30px;margin-bottom:70px;margin-left:50px;">TRACK MY ORDER
+              </span>
+              {% if custom_message != blank %}
+              <p>{{ custom_message }}</p>
+              {% else %}
+              <p>{{ email_body }}</p>
+              {% endif %}
+            </a>
         </td>
     </tr>
 
@@ -222,6 +236,28 @@
                 </tbody>
             </table>
         </td>
+    </tr>
+    <tr>
+      <td>
+        <table style="width:600px;border-collapse:collapse;margin:0 auto;">
+          <tr>
+            <td style="padding:0;position:relative;">
+              <a href="#">
+                <img width="300" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Using_Aether_2x_04e2b84f-8fa7-4b35-8b12-522b831b2d85.png?v=1609502643" />
+              </a>
+              <a style="text-decoration:none;position:absolute;bottom:70px;" href="https://aether-eyewear.com/" target="_blank" rel="noopener noreferrer">
+                <span style="display: inline-block;color:white;border:solid 1px white;font-weight:bold;font-size:14px;line-height:70px;width:300px;font-family:GTAmerica-ExtendedMedium;background-color:black;text-align:center;vertical-align:middle;max-width:200px;margin-left:50px;">DOWNLOAD GUIDE
+                </span>
+              </a>
+            </td>
+            <td style="padding:0">
+              <a href="#">
+                <img width="300" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Pic_2x_49423923-e594-423f-a5e7-fb7ffe452d2c.png?v=1609502648" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
     </tr>
     <tr>
       <td>

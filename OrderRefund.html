@@ -8,6 +8,8 @@
 
 {% endcapture %}
 
+{% capture email_body %}You will see your refunded amount of {{ amount | money }} in your bank account within 2-4 business days.{% endcapture %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +28,17 @@
     <tr>
         <td>
           <a href="#">
-            <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/ORDER_RECEIVED_2x_3395d6cf-1a81-4b45-a7d7-0c3c8ceae3d7.png?v=1609502575" />
+            <img width="600" style="display: block;" src="https://cdn.shopifycdn.net/s/files/1/0274/6839/8703/files/Intro_Block_2x_90c00d80-42e3-40be-b790-02e41ea8af4e.png?v=1609502610" />
+          </a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+          <a href="#">
+            <div style="font-family: SctoGroteskA-Regular; font-size:16px;color:black;max-width: 380px; margin-top: 35px; margin-bottom: 70px; padding-left: 50px; padding-right: 50px;">
+              {{email_body}}
+            </div>
           </a>
         </td>
     </tr>
