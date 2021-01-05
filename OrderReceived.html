@@ -168,7 +168,7 @@
                                 <td width="129px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;"> {{line_title}}</td>
                                 <td width="111px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">
                                   {% if line.variant.title != 'Default Title' %}
-                                    <span>{{ line.variant.title }}</span>
+                                    {{ line.variant.title }}
                                   {% endif %}
                                 </td>
                                 <td width="110px" style="font-family: SctoGroteskA-Medium;font-size: 11px;color: #000000;letter-spacing: 0;">x {{line.quantity}}</td>
@@ -193,7 +193,7 @@
                     <tr style="height: 30px;"><td></td><td></td><td></td></tr>
                     <tr>
                         <td align="left" width="360">
-                          <span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:12px;">Ships by 22 March 2021</span>
+                          <span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:12px;">Ships by 30 March 2021</span>
                         </td>
                         <td align="left" width="90"><span style="font-family:SctoGroteskA-Regular;color: black;opacity: 0.6;font-size:10px;">Subtotal</span></td>
                         <td align="left" width="50"><span style="font-family: SctoGroteskA-Medium;font-size:11px;line-height:22px;color: black;">{{ subtotal_price | money }}</span></td>
